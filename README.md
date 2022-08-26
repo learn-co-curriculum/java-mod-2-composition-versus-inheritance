@@ -2,31 +2,51 @@
 
 ## Learning Goals
 
-- Learning Goal 1
-- Learning Goal 2
+- Explain the difference between inheritance and composition
 
-## Introduction
+## What is Composition?
 
-A 1-2 sentence summary of what will be covered.
+**Composition** is when a class has references to other classes as members.
+We can think of composition as having a "has-a" relationship:
 
-## Topic 1
+- A library has a book.
+- A house has a kitchen.
+- A car has a steering wheel
 
-Discuss the topic of the reading. Break into sections and sub-sections as
-appropriate to help with the reader's orientation with the material and future
-referencing.
+Consider the following example:
 
-## Topic 2
+```java
+public class Book {
+    private String title;
+    private String author;
+    
+    Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+}
 
-Discuss the topic of the reading. Break into sections and sub-sections as
-appropriate to help with the reader's orientation with the material and future
-referencing.
+public class Library {
+    
+    // A library has an array of books
+    Book[] books = new Book[10];
+    
+}
+```
 
-## Conclusion
+This is a very simplified example, but it shows that we know a library has
+several books. So we can represent this in code by using the `Book` objects in
+the composition of a `Library`.
 
-A short one or two paragraph summary of the contents of the lessons, recapping
-the learning goals.
+## When to use Composition and Inheritance
 
-## Resources
+As we can see, composition differs from inheritance since inheritance is
+associated with an "is-a" relationship:
 
-- [Resource Link 1](example.com)
-- [Resource Link 2](example.com)
+- A cat is an animal.
+- Football is a sport.
+- A car is a vehicle.
+
+When deciding on whether to use composition or inheritance, it is important to
+remember the "is-a" versus "has-a" relationships as they serve different
+purposes.
